@@ -1,0 +1,16 @@
+.tab {
+    height: 80vh !important;
+    overflow:scroll;
+}
+tbody > tr:hover {
+    cursor: pointer;
+    background-color: #FF900F;
+    color: #fff;
+}
+.table {
+    font-size: small;
+
+}
+b {
+    color: #FF900F;
+}
