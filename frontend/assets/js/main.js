@@ -42,7 +42,6 @@ function cargarTabla(res){
                 <td>${element.nombre}</td>
                 <td>${element.codigo}</td>
                 <td>${element.correo}</td>
-                <td>${element.activo}</td>
                 <td>${element.createdAt}</td>
                 <td>${element.updatedAt}</td>
             </tr>`;
