@@ -13,8 +13,8 @@ function eventListener(){
     obtenerDatos();
     est.addEventListener('click',llenarFormularioDesdeTabla);
     form1.addEventListener('submit',enviarData);
-    form2.addEventListener('submit',buscarId);
-    btnBuscar.addEventListener('click',updateData);
+    form3.addEventListener('submit',updateData);
+    btnBuscar.addEventListener('click',buscarId);
     btnEliminar.addEventListener('click',eliminarId);
 }
 
