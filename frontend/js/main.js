@@ -14,7 +14,8 @@ function eventListener(){
 
     obtenerDatos();
     est.addEventListener('click',llenarFormularioDesdeTabla);
-    btnAgregar.addEventListener('click',enviarData);
+    form1.addEventListener('submit',enviarData);
+    // btnAgregar.addEventListener('click',enviarData);
     btnActualizar.addEventListener('click',updateData);
     btnBuscar.addEventListener('click',buscarId);
     btnEliminar.addEventListener('click',eliminarId);
@@ -65,6 +66,7 @@ function llenarFormularioDesdeTabla(e){
 function enviarData(e) {
     const url = 'https://crud-estudiantes-js-dilan.herokuapp.com/crear/estudiante';
 
+    console.log({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value});
 
     fetch(url,{
         method: 'POST',
