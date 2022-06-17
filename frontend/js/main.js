@@ -22,7 +22,7 @@ function eventListener(){
 }
 
 function obtenerDatos(){
-    const url = 'https://crud-estudiantes-js-dilan.herokuapp.com/mostrar/estudiantes';
+    const url = 'https://uniguajira.herokuapp.com/mostrar/estudiantes';
 
     fetch(url)
         .then(resp => 
@@ -64,7 +64,7 @@ function llenarFormularioDesdeTabla(e){
 }
 
 function enviarData(e) {
-    const url = 'https://crud-estudiantes-js-dilan.herokuapp.com/crear/estudiante';
+    const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
 
     console.log({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value});
 
@@ -85,7 +85,7 @@ function enviarData(e) {
 }
 
 function updateData(e) {
-    const url = `https://crud-estudiantes-js-dilan.herokuapp.com/update/estudiante/${form3.childNodes[1].value}`;
+    const url = `https://uniguajira.herokuapp.com/update/estudiante/${form3.childNodes[1].value}`;
 
     fetch(url,{
         method: 'PATCH',
@@ -105,7 +105,7 @@ function updateData(e) {
 
 function buscarId(e) {
     console.log(form2.childNodes[1].value);
-    const url = `https://crud-estudiantes-js-dilan.herokuapp.com/mostrar/estudiante/${form2.childNodes[1].value}`;
+    const url = `https://uniguajira.herokuapp.com/mostrar/estudiante/${form2.childNodes[1].value}`;
     
     fetch(url)
         .then(resp => 
@@ -125,7 +125,7 @@ function buscarId(e) {
 
 function eliminarId(e) {
     console.log(form2.childNodes[1].value);
-    const url = `https://crud-estudiantes-js-dilan.herokuapp.com/delete/estudiante/${form2.childNodes[1].value}`;
+    const url = `https://uniguajira.herokuapp.com/delete/estudiante/${form2.childNodes[1].value}`;
     
     fetch(url,{
         method: 'PATCH',
