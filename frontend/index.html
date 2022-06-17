@@ -38,9 +38,9 @@
             <div class="col-xl-3 col-sm-12 mt-4 mb-4 " style="background-color: #F16357; color: white;">
                 
                 <form id="formulario1" class="form m-4" role="form">
-                    <input type="text" class="form-control m-1" name="nombre"  placeholder="Nombre" required >  
-                    <input type="number" class="form-control m-1" name="codigo"  placeholder="Código" required >  
-                    <input type="email" class="form-control m-1" name="correo"  placeholder="Correo" required >  
+                    <input type="text" class="form-control m-1" name="nombre"  placeholder="Nombre" required  minlength="3" maxlength="60">  
+                    <input type="number" class="form-control m-1" name="codigo"  placeholder="Código" required minlength="10" maxlength="10">  
+                    <input type="email" class="form-control m-1" name="correo"  placeholder="Correo" required minlength="60" maxlength="60">  
                     
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-success m-2" id="agregar">Agregar</button>
@@ -51,10 +51,10 @@
 
 
                 <form id="formulario3" class="form m-4" role="form">
-                    <input type="text" class="form-control m-1" name="id"  placeholder="Id" required>  
-                    <input type="text" class="form-control m-1" name="nombre"  placeholder="Nombre" required>  
-                    <input type="number" class="form-control m-1" name="codigo"  placeholder="Código" required>  
-                    <input type="email" class="form-control m-1" name="correo"  placeholder="Correo" required>  
+                    <input type="number" class="form-control m-1" name="id"  placeholder="Id" required minlength="1">  
+                    <input type="text" class="form-control m-1" name="nombre"  placeholder="Nombre" required minlength="3" maxlength="60">  
+                    <input type="number" class="form-control m-1" name="codigo"  placeholder="Código" required minlength="10" maxlength="10">  
+                    <input type="email" class="form-control m-1" name="correo"  placeholder="Correo" required minlength="60" maxlength="60">  
                     
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-warning text-white m-2" id="actualizar">Actualizar</button>
@@ -86,7 +86,7 @@
 
             <div class="col-xl-3 col-sm-12 mt-4 mb-4 " style="background-color: #F16357; color: white;">
                 <form id="formulario2" class="form m-4" role="form">
-                    <input type="text" class="form-control" name="id" value="" placeholder="Id" required>  
+                    <input type="text" class="form-control" name="id" value="" placeholder="Id" required minlength="1">  
                     
                     <div class="d-flex justify-content-center">
                         <button id="buscar" type="button" class="btn btn-primary  m-2" id="buscar">Buscar</button>
