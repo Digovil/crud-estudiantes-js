@@ -113,7 +113,7 @@ function buscarId(e) {
             <li class="list-group-item"><b>ID:</b> ${data.estudiante.id}</li>
             <li class="list-group-item"><b>Nombre:</b> ${data.estudiante.nombre}</li>
             <li class="list-group-item"><b>Código:</b> ${data.estudiante.codigo}</li>
-            <li class="list-group-item"><b>Dirección:</b> ${data.estudiante.correo}</li>`;
+            <li class="list-group-item"><b>Correo:</b> ${data.estudiante.correo}</li>`;
         })
         .catch(err => console.log(err))
 }
