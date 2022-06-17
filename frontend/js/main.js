@@ -64,26 +64,23 @@ function llenarFormularioDesdeTabla(e){
 }
 
 function enviarData(e) {
-    // const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
-
-    console.log({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value});
+    const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
 
 
+    fetch(url,{
+        method: 'POST',
+        body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value}),
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+        .then(resp =>
+            resp.json()
 
-    // fetch(url,{
-    //     method: 'POST',
-    //     body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value}),
-    //     headers: {
-    //         "Content-type": "application/json"
-    //     }
-    // })
-    //     .then(resp =>
-    //         resp.json()
 
-
-    //     )
-    //     .then(data => location.reload())
-    //     .catch(err => console.log(err))
+        )
+        .then(data => location.reload())
+        .catch(err => console.log(err))
 }
 
 function updateData(e) {
