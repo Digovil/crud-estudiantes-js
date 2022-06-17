@@ -2,9 +2,6 @@ const est = document.querySelector('#estudiantes'); // Tabla estudiantes
 const form1 = document.querySelector('#formulario1');
 const form2 = document.querySelector('#formulario2');
 const form3 = document.querySelector('#formulario3');
-const btnAgregar = document.querySelector('#agregar');
-const btnActualizar = document.querySelector('#actualizar');
-const btnBuscar = document.querySelector('#buscar');
 const btnEliminar = document.querySelector('#eliminar');
 const estudiante = document.querySelector('#estudiante');
 
@@ -15,9 +12,8 @@ function eventListener(){
     obtenerDatos();
     est.addEventListener('click',llenarFormularioDesdeTabla);
     form1.addEventListener('submit',enviarData);
-    // btnAgregar.addEventListener('click',enviarData);
-    btnActualizar.addEventListener('click',updateData);
-    btnBuscar.addEventListener('click',buscarId);
+    form2.addEventListener('submit',updateData);
+    form3.addEventListener('submit',buscarId);
     btnEliminar.addEventListener('click',eliminarId);
 }
 
@@ -65,7 +61,6 @@ function llenarFormularioDesdeTabla(e){
 
 function enviarData(e) {
     const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
-
 
     fetch(url,{
         method: 'POST',
