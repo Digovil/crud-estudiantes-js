@@ -1,4 +1,4 @@
-const est = document.querySelector('#estudiantes'); // Tabla estudiantes
+const est = document.querySelector('#estudiantes'); 
 const form1 = document.querySelector('#formulario1');
 const form2 = document.querySelector('#formulario2');
 const form3 = document.querySelector('#formulario3');
@@ -41,7 +41,7 @@ function cargarTabla(res){
                 <td>${element.id}</td>
                 <td>${element.nombre}</td>
                 <td>${element.codigo}</td>
-                <td>${element.direccion}</td>
+                <td>${element.correo}</td>
                 <td>${element.activo}</td>
                 <td>${element.createdAt}</td>
                 <td>${element.updatedAt}</td>
@@ -65,7 +65,7 @@ function enviarData(e) {
 
     fetch(url,{
         method: 'POST',
-        body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value}),
+        body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	correo: form1.childNodes[5].value}),
         headers: {
             "Content-type": "application/json"
         }
@@ -84,7 +84,7 @@ function updateData(e) {
 
     fetch(url,{
         method: 'PATCH',
-        body: JSON.stringify({nombre:form3.childNodes[3].value,	codigo: form3.childNodes[5].value,	direccion: form3.childNodes[7].value}),
+        body: JSON.stringify({nombre:form3.childNodes[3].value,	codigo: form3.childNodes[5].value,	correo: form3.childNodes[7].value}),
         headers: {
             "Content-type": "application/json"
         }
@@ -113,7 +113,7 @@ function buscarId(e) {
             <li class="list-group-item"><b>ID:</b> ${data.estudiante.id}</li>
             <li class="list-group-item"><b>Nombre:</b> ${data.estudiante.nombre}</li>
             <li class="list-group-item"><b>Código:</b> ${data.estudiante.codigo}</li>
-            <li class="list-group-item"><b>Dirección:</b> ${data.estudiante.direccion}</li>`;
+            <li class="list-group-item"><b>Dirección:</b> ${data.estudiante.correo}</li>`;
         })
         .catch(err => console.log(err))
 }

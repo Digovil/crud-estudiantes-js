@@ -35,7 +35,7 @@ export class EstudianteController {
 
             nombre,
             codigo,
-            direccion,
+            correo,
             activo
         } = req.body;
 
@@ -44,7 +44,7 @@ export class EstudianteController {
                 
                 nombre,
                 codigo,
-                direccion,
+                correo,
                 activo
             }
             const estudiante = await Estudiante.create({...body});
@@ -54,7 +54,7 @@ export class EstudianteController {
                     id: estudiante.id,
                     nombre: estudiante.dataValues.nombre,
                     codigo: estudiante.dataValues.codigo,
-                    direccion: estudiante.dataValues.direccion,
+                    correo: estudiante.dataValues.correo,
                     updatedAt: estudiante.dataValues.updatedAt,
                     createdAt: estudiante.dataValues.createdAt,
                     
@@ -72,7 +72,7 @@ export class EstudianteController {
             id,
             nombre,
             codigo,
-            direccion,
+            correo,
             activo
         } = req.body;
 
@@ -81,7 +81,7 @@ export class EstudianteController {
                 
                 nombre,
                 codigo,
-                direccion,
+                correo,
                 activo
             }
 

@@ -5,7 +5,7 @@ export class Estudiante extends Model {
     id;
     nombre;
     codigo;
-    direccion;
+    correo;
     activo;
 }
 
@@ -17,26 +17,39 @@ Estudiante.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
+            allowNull: false,
+            validate: {
+                isNumeric: true
+            }
         },
         nombre: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                is: /^[a-z]+$/i
+            }
         },
         
         codigo: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isNumeric: true
+            }
         },
   
-        direccion: {
+        correo: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                isEmail: true
+            }
         },
 
         activo: {
             type: DataTypes.BOOLEAN,
             defaultValue: true,
-            allowNull: false
+            allowNull: false,
         },
     },
     {

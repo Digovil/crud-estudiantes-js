@@ -31,7 +31,7 @@ export const database = new Sequelize(DB_NAME,DB_USER,DB_PASS,{
     port: DB_PORT
 });
 
-database.sync({force:false})
+database.sync({force:true})
     .then(function () {
         console.log("Base de datos creada correctamente... !!!");
     });
