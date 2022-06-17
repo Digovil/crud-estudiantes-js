@@ -12,8 +12,8 @@ function eventListener(){
     obtenerDatos();
     est.addEventListener('click',llenarFormularioDesdeTabla);
     form1.addEventListener('submit',enviarData);
-    form2.addEventListener('submit',updateData);
-    form3.addEventListener('submit',buscarId);
+    form2.addEventListener('submit',buscarId);
+    form3.addEventListener('submit',updateData);
     btnEliminar.addEventListener('click',eliminarId);
 }
 
