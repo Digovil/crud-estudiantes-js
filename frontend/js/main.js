@@ -25,10 +25,10 @@ function obtenerDatos(){
     const url = 'https://uniguajira.herokuapp.com/mostrar/estudiantes';
 
     fetch(url)
-        .then(resp => 
+        .then(resp =>
             resp.json()
-            
-        
+
+
         )
         .then(data => cargarTabla(data))
         .catch(err => console.log(err))
@@ -55,7 +55,7 @@ function cargarTabla(res){
 }
 
 function llenarFormularioDesdeTabla(e){
- 
+
     form3.childNodes[1].value = e.path[1].childNodes[1].outerText;
     form3.childNodes[3].value = e.path[1].childNodes[3].outerText;
     form3.childNodes[5].value = e.path[1].childNodes[5].outerText;
@@ -64,24 +64,26 @@ function llenarFormularioDesdeTabla(e){
 }
 
 function enviarData(e) {
-    const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
+    // const url = 'https://uniguajira.herokuapp.com/crear/estudiante';
 
     console.log({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value});
 
-    fetch(url,{
-        method: 'POST',
-        body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value}),
-        headers: {
-            "Content-type": "application/json"
-        }
-    })
-        .then(resp => 
-            resp.json()
-            
-        
-        )
-        .then(data => location.reload())
-        .catch(err => console.log(err))
+
+
+    // fetch(url,{
+    //     method: 'POST',
+    //     body: JSON.stringify({nombre:form1.childNodes[1].value,	codigo: form1.childNodes[3].value,	direccion: form1.childNodes[5].value}),
+    //     headers: {
+    //         "Content-type": "application/json"
+    //     }
+    // })
+    //     .then(resp =>
+    //         resp.json()
+
+
+    //     )
+    //     .then(data => location.reload())
+    //     .catch(err => console.log(err))
 }
 
 function updateData(e) {
@@ -94,10 +96,10 @@ function updateData(e) {
             "Content-type": "application/json"
         }
     })
-        .then(resp => 
+        .then(resp =>
             resp.json()
-            
-        
+
+
         )
         .then(data => location.reload())
         .catch(err => console.log(err))
@@ -106,12 +108,12 @@ function updateData(e) {
 function buscarId(e) {
     console.log(form2.childNodes[1].value);
     const url = `https://uniguajira.herokuapp.com/mostrar/estudiante/${form2.childNodes[1].value}`;
-    
+
     fetch(url)
-        .then(resp => 
+        .then(resp =>
             resp.json()
-            
-        
+
+
         )
         .then((data) => {
             estudiante.innerHTML = `
@@ -126,20 +128,20 @@ function buscarId(e) {
 function eliminarId(e) {
     console.log(form2.childNodes[1].value);
     const url = `https://uniguajira.herokuapp.com/delete/estudiante/${form2.childNodes[1].value}`;
-    
+
     fetch(url,{
         method: 'PATCH',
         headers: {
             "Content-type": "application/json"
         }
         })
-        .then(resp => 
+        .then(resp =>
             resp.json()
-            
-        
+
+
         )
         .then((data) => {
-            location.reload()           
+            location.reload()
         })
         .catch(err => console.log(err))
 }
