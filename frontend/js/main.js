@@ -2,6 +2,7 @@ const est = document.querySelector('#estudiantes'); // Tabla estudiantes
 const form1 = document.querySelector('#formulario1');
 const form2 = document.querySelector('#formulario2');
 const form3 = document.querySelector('#formulario3');
+const btnBuscar = document.querySelector('#buscar');
 const btnEliminar = document.querySelector('#eliminar');
 const estudiante = document.querySelector('#estudiante');
 
@@ -13,7 +14,7 @@ function eventListener(){
     est.addEventListener('click',llenarFormularioDesdeTabla);
     form1.addEventListener('submit',enviarData);
     form2.addEventListener('submit',buscarId);
-    form3.addEventListener('submit',updateData);
+    btnBuscar.addEventListener('click',updateData);
     btnEliminar.addEventListener('click',eliminarId);
 }
 
